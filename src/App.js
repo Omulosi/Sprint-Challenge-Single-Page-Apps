@@ -10,6 +10,8 @@ import WelcomePage from './components/WelcomePage';
 
 const fetchAPI = 'https://rick-api.herokuapp.com/api/';
 
+
+
 export default function App() {
 
   const [characters, setCharacters] = useState([]);
