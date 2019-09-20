@@ -7,11 +7,18 @@ const StyledSearchForm = styled.section`
 `
 
 export default function SearchForm(props) {
+
+  debugger;
  
   return (
     <StyledSearchForm>
       <Formik
         initialValues={{query: ''}}
+        onSubmit={(values, { resetForm }) => {
+          debugger;
+          props.onSubmit(values.query);
+          resetForm();
+        }}
         render={props => {
           return (
             <Form>

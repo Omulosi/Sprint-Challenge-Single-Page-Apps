@@ -1,7 +1,5 @@
 import React from "react";
 import styled from 'styled-components';
-import fun from './fun.jpg';
-
 
 const StyledDiv = styled.div`
   padding 0.5em;
@@ -34,13 +32,15 @@ const StyledDiv = styled.div`
   }
 `
 export default function CharacterCard(props) {
+  const { character } = props;
   return (
     <StyledDiv>
       <figure>
-        <img src={fun} alt="rick sanchez"/>
+        <img src={character.image} alt="rick sanchez"/>
         <figcaption>
-          <p>Rick Sanchez from Earth</p>
-          <p>Human; Male; Alive</p>
+          <p>{`${character.name} from ${character.location.name}`}</p>
+          <p>{`${character.species}; ${character.gender}; ${character.status}`}</p>
+          <p>{`Episodes: ${character.episode.length}`}</p>
         </figcaption>
       </figure>
     </StyledDiv>
