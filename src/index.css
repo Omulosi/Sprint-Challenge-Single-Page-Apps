@@ -52,6 +52,7 @@ ul {
   align-items: center;
   padding-right: 5em;
   padding-left: 5em;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,.27);
 }
 
 .navigation ul {
