@@ -43,27 +43,6 @@ export default function CharacterCard(props) {
           <p>Human; Male; Alive</p>
         </figcaption>
       </figure>
-      <figure>
-        <img src={fun} alt="rick sanchez"/>
-        <figcaption>
-          <p>Rick Sanchez from Earth</p>
-          <p>Human; Male; Alive</p>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src={fun} alt="rick sanchez"/>
-        <figcaption>
-          <p>Rick Sanchez from Earth</p>
-          <p>Human; Male; Alive</p>
-        </figcaption>
-      </figure>
-      <figure>
-        <img src={fun} alt="rick sanchez"/>
-        <figcaption>
-          <p>Rick Sanchez from Earth</p>
-          <p>Human; Male; Alive</p>
-        </figcaption>
-      </figure>
     </StyledDiv>
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CharacterCard from './CharacterCard';
 
 import axios from 'axios';
+import styled from 'styled-components';
 
 const data = [{
 id: 1,
@@ -57,6 +58,17 @@ created: "2017-11-04T18:48:46.250Z"
 },
 ]
 
+
+const StyledList = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+  div {
+    margin: 1em;
+  }
+`
 export default function CharacterList() {
   const [characterList, setCharactersList] = useState([]);
 
@@ -66,10 +78,10 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <section className="character-list">
-      {data.map(character => {
+    <StyledList>
+      {[0,1,2,3,4,5].map(character => {
         return <CharacterCard character={character} />;
       })}
-    </section>
+    </StyledList>
   );
 }
