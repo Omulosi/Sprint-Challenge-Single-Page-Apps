@@ -6,7 +6,6 @@ import SearchForm from './SearchForm';
 import axios from 'axios';
 import styled from 'styled-components';
 
-import data from './data';
 
 const StyledList = styled.section`
   display: flex;
@@ -19,11 +18,12 @@ const StyledList = styled.section`
   }
 `
 
-// const fetchAPI = 'https://rickandmortyapi.com/api/character/';
-const fetchAPI = 'https://rick-api.herokuapp.com/api/';
+const fetchAPI = 'https://rickandmortyapi.com/api/character/';
+//const fetchAPI = 'https://rick-api.herokuapp.com/api/';
 
 export default function CharacterList() {
-  const [characterList, setCharactersList] = useState(data);
+  const [characterList, setCharactersList] = useState([]);
+  const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
     // TODO: Add API Request here - must run in `useEffect`
@@ -38,16 +38,17 @@ export default function CharacterList() {
   }, []);
 
   const handleSubmit = (query) => {
-    const characters = characterList.filter(c => c.name.includes(query));
-    debugger;
-    setCharactersList(characters);
+    const characters = characterList.filter(c => c.name.toLowerCase().includes(query));
+    setSearchResult(characters);
   }
+
+  const characters = searchResult.length === 0? characterList: searchResult;
 
   return (
     <div>
       <SearchForm onSubmit={handleSubmit}/>
       <StyledList >
-        {characterList.map(character => {
+        {characters.map(character => {
           return <CharacterCard character={character} key={character.id}/>;
         })}
       </StyledList>

@@ -4,18 +4,18 @@ import styled from 'styled-components';
 
 const StyledSearchForm = styled.section`
   padding: 4px;
+  position: absolute;
+  top: 6.5em;
+  right: 5em;
 `
 
 export default function SearchForm(props) {
 
-  debugger;
- 
   return (
     <StyledSearchForm>
       <Formik
         initialValues={{query: ''}}
         onSubmit={(values, { resetForm }) => {
-          debugger;
           props.onSubmit(values.query);
           resetForm();
         }}
