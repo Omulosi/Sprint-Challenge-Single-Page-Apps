@@ -1,10 +1,15 @@
 import React from "react";
 import { Formik, Field, Form } from 'formik';
+import styled from 'styled-components';
+
+const StyledSearchForm = styled.section`
+  padding: 4px;
+`
 
 export default function SearchForm(props) {
  
   return (
-    <section className="search-form">
+    <StyledSearchForm>
       <Formik
         initialValues={{query: ''}}
         render={props => {
@@ -15,6 +20,6 @@ export default function SearchForm(props) {
           )
         }}
       />
-    </section>
+    </StyledSearchForm>
   );
 }
