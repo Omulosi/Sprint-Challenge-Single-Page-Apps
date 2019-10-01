@@ -12,6 +12,7 @@ main {
   background: #fff;
   padding: 15px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  position: relative;
 }
 
 .grid-view {
@@ -36,4 +37,42 @@ main {
 
 header h1 {
   text-align: center;
+}
+
+input[type='text'] {
+  padding: 2px;
+}
+
+ul {
+  list-style: none;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 5em;
+  padding-left: 5em;
+  box-shadow: 0 3px 5px 0 rgba(0,0,0,.27);
+  margin-bottom: 0.5em;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: center;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: #404040;
+}
+
+.navigation a:hover {
+  border-bottom: 1px solid #404040;
+}
+
+.navigation li ~ li{
+  margin-left: 2em;
+  border-left: 1px solid rgba(0, 0, 0, 0.5);
+  padding-left: 2em;
 }
